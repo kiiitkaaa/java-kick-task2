@@ -3,7 +3,6 @@ package service;
 import entity.ComponentType;
 import entity.CustomTextComponent;
 import entity.TextComposite;
-import exception.TextException;
 import org.junit.jupiter.api.Test;
 import parser.ParagraphParser;
 import service.impl.LexemeSwapServiceImpl;
