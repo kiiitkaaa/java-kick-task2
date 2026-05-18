@@ -1,0 +1,22 @@
+package com.deshko.task2.parser;
+
+import com.deshko.task2.entity.ComponentType;
+import com.deshko.task2.entity.CustomTextComponent;
+import com.deshko.task2.entity.TextComposite;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
+
+class WordParserTest {
+    @Test
+    void shouldSplitLexemeIntoWordAndPunctuation() {
+        String text = "hello,";
+
+        CustomTextComponent lexeme = new TextComposite(ComponentType.LEXEME);
+        WordParser.getInstance().parse(lexeme, text);
+
+        assertEquals(2, lexeme.getChildren().size());
+
+        assertEquals(ComponentType.WORD, lexeme.getChildren().get(0).getType());
+        assertEquals(ComponentType.PUNCTUATION, lexeme.getChildren().get(1).getType());
+    }
+}
